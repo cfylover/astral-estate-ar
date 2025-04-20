@@ -1,13 +1,50 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import ThreeBackground from "@/components/ThreeBackground";
+import Hero from "@/components/Hero";
+import FeatureSection from "@/components/FeatureSection";
+import PropertySection from "@/components/PropertySection";
+import VRSection from "@/components/VRSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  // Set dark background
+  useEffect(() => {
+    document.body.classList.add("bg-astral-dark");
+    
+    return () => {
+      document.body.classList.remove("bg-astral-dark");
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen text-white">
+      {/* Background 3D elements */}
+      <ThreeBackground />
+      
+      {/* Navbar */}
+      <Navbar />
+      
+      {/* Hero Section */}
+      <Hero />
+      
+      {/* Feature Section */}
+      <FeatureSection />
+      
+      {/* Property Section */}
+      <PropertySection />
+      
+      {/* VR Section */}
+      <VRSection />
+      
+      {/* Testimonial Section */}
+      <TestimonialSection />
+      
+      {/* Footer */}
+      <Footer />
+    </main>
   );
 };
 
