@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";

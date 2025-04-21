@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -70,7 +69,7 @@ const Navbar = () => {
   );
 };
 
-const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) => {
+const NavLink = ({ to, children }) => {
   return (
     <Link
       to={to}

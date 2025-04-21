@@ -1,18 +1,7 @@
-
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
-
-interface PropertyCardProps {
-  image: string;
-  title: string;
-  price: string;
-  beds: number;
-  baths: number;
-  sqft: number;
-  location: string;
-}
 
 const PropertyCard = ({
   image,
@@ -22,8 +11,8 @@ const PropertyCard = ({
   baths,
   sqft,
   location,
-}: PropertyCardProps) => {
-  const cardRef = useRef<HTMLDivElement>(null);
+}) => {
+  const cardRef = useRef(null);
 
   return (
     <motion.div
