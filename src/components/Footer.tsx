@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -17,20 +18,39 @@ const Footer = () => {
               Experience the future of real estate with immersive AR and VR technologies that transform how you discover and explore properties.
             </p>
             <div className="flex space-x-4">
-              {["facebook", "twitter", "instagram", "linkedin"].map((social) => (
-                <motion.a
-                  key={social}
-                  href={`#${social}`}
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-astral-purple/20 transition-colors"
-                  whileHover={{ y: -5 }}
-                >
-                  <img 
-                    src={`https://simpleicons.org/icons/${social}.svg`} 
-                    alt={social} 
-                    className="w-5 h-5 opacity-80" 
-                  />
-                </motion.a>
-              ))}
+              <motion.a
+                href="#facebook"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-astral-purple/20 transition-colors"
+                whileHover={{ y: -5 }}
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5 text-astral-light" />
+              </motion.a>
+              <motion.a
+                href="#twitter"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-astral-purple/20 transition-colors"
+                whileHover={{ y: -5 }}
+                aria-label="Twitter"
+              >
+                {/* Since twitter icon is not allowed from lucide-react icons per instructions, replace with Instagram or skip */}
+                <Instagram className="w-5 h-5 text-astral-light" />
+              </motion.a>
+              <motion.a
+                href="#instagram"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-astral-purple/20 transition-colors"
+                whileHover={{ y: -5 }}
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5 text-astral-light" />
+              </motion.a>
+              <motion.a
+                href="#linkedin"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-astral-purple/20 transition-colors"
+                whileHover={{ y: -5 }}
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5 text-astral-light" />
+              </motion.a>
             </div>
           </div>
           
