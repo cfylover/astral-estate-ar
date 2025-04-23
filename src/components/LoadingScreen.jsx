@@ -6,7 +6,7 @@ import * as THREE from "three";
 
 // 3D Building for loading animation
 const LoadingModel = () => {
-  const groupRef = useRef<THREE.Group>(null);
+  const groupRef = useRef(null);
   
   useFrame((state) => {
     if (groupRef.current) {
@@ -50,17 +50,11 @@ const LoadingModel = () => {
   );
 };
 
-interface LoadingScreenProps {
-  progress?: number;
-  isLoading: boolean;
-  text?: string;
-}
-
 const LoadingScreen = ({ 
   progress = 0, 
   isLoading = true,
   text = "Loading Experience"
-}: LoadingScreenProps) => {
+}) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   
   // Simulate loading progress

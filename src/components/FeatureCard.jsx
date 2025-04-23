@@ -1,12 +1,7 @@
+
 import { motion } from "framer-motion";
 
-interface FeatureCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
+const FeatureCard = ({ icon, title, description }) => {
   return (
     <motion.div
       className="ar-card"
