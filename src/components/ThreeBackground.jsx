@@ -1,3 +1,4 @@
+
 import { useRef, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
@@ -6,7 +7,7 @@ import { motion } from "framer-motion";
 
 // Floating Building component
 const FloatingBuilding = () => {
-  const mesh = useRef<THREE.Mesh>(null!);
+  const mesh = useRef(null);
   
   useFrame(() => {
     if (mesh.current) {
@@ -70,7 +71,7 @@ const Scene = () => {
 };
 
 // Wrapper component with Framer Motion
-const ThreeBackground = ({ className = "" }: { className?: string }) => {
+const ThreeBackground = ({ className = "" }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
