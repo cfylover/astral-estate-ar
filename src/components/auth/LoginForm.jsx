@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import SocialLogin from "./SocialLogin";
 
 const LoginForm = ({ onFlip }) => {
   const [showPassword, setShowPassword] = useState(false);

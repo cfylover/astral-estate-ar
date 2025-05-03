@@ -1,34 +1,31 @@
 
+import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Facebook, Mail } from "lucide-react";
 
 const SocialLogin = () => {
   return (
-    <>
-      <div className="relative flex items-center justify-center mt-4">
+    <div className="space-y-3 mt-4">
+      <div className="relative">
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-white/10"></div>
+          <span className="w-full border-t border-gray-600" />
         </div>
-        <div className="relative z-10 bg-astral-dark px-4 text-sm text-gray-400">
-          Or continue with
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-astral-dark px-2 text-gray-400">Or continue with</span>
         </div>
       </div>
       
-      <div className="grid grid-cols-4 gap-3">
-        {["Google", "Apple", "Facebook", "GitHub"].map((provider) => (
-          <Button
-            key={provider}
-            variant="outline"
-            className="bg-white/5 border-white/10 hover:bg-white/10"
-          >
-            <img 
-              src={`https://simpleicons.org/icons/${provider.toLowerCase()}.svg`} 
-              alt={provider} 
-              className="w-5 h-5 opacity-80" 
-            />
-          </Button>
-        ))}
+      <div className="grid grid-cols-2 gap-3">
+        <Button variant="outline" className="bg-white/5 border-white/10 hover:bg-white/10">
+          <Facebook className="mr-2 h-4 w-4" />
+          Facebook
+        </Button>
+        <Button variant="outline" className="bg-white/5 border-white/10 hover:bg-white/10">
+          <Mail className="mr-2 h-4 w-4" />
+          Google
+        </Button>
       </div>
-    </>
+    </div>
   );
 };
 
