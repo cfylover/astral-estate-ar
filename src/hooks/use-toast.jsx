@@ -151,7 +151,41 @@ function useToast() {
   };
 }
 
-// Create a variable for the toast first, then export it
-const toast = useToast();
+// Create a standalone toast object that doesn't rely on React hooks
+// This can be imported directly without causing the "hooks outside component" error
+const toast = {
+  toasts: memoryState.toasts,
+  toast: (props) => {
+    const id = genId();
+
+    const update = (props) =>
+      dispatch({
+        type: actionTypes.UPDATE_TOAST,
+        toast: { ...props, id },
+      });
+    const dismiss = () =>
+      dispatch({ type: actionTypes.DISMISS_TOAST, toastId: id });
+
+    dispatch({
+      type: actionTypes.ADD_TOAST,
+      toast: {
+        ...props,
+        id,
+        open: true,
+        onOpenChange: (open) => {
+          if (!open) dismiss();
+        },
+      },
+    });
+
+    return {
+      id: id,
+      dismiss,
+      update,
+    };
+  },
+  dismiss: (toastId) =>
+    dispatch({ type: actionTypes.DISMISS_TOAST, toastId }),
+};
 
 export { useToast, toast };
