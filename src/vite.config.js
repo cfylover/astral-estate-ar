@@ -18,11 +18,11 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    extensions: ['.js', '.jsx', '.json']
   },
-  // Add support for TypeScript without requiring .ts files
+  // Add support for JavaScript files
   optimizeDeps: {
     esbuildOptions: {
-      // This will allow JS files to import other JS files with TypeScript syntax
       target: 'es2020',
       supported: { 
         'top-level-await': true 
