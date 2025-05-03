@@ -151,4 +151,7 @@ function useToast() {
   };
 }
 
-export { useToast, toast: useToast() };
+// Create a variable for the toast first, then export it
+const toast = useToast();
+
+export { useToast, toast };
