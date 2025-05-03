@@ -19,4 +19,14 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Add support for TypeScript without requiring .ts files
+  optimizeDeps: {
+    esbuildOptions: {
+      // This will allow JS files to import other JS files with TypeScript syntax
+      target: 'es2020',
+      supported: { 
+        'top-level-await': true 
+      },
+    }
+  }
 }));
