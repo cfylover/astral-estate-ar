@@ -18,9 +18,8 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
-  // Add support for JavaScript files
   optimizeDeps: {
     esbuildOptions: {
       target: 'es2020',
